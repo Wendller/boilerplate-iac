@@ -3,7 +3,7 @@ resource "aws_cloudfront_distribution" "cloudfront" {
 
   origin {
     origin_id   = "${var.bucket_origin_id}"
-    domain_name = "${var.bucket_domain_name}"
+    domain_name = "${var.bucket_domain_name}-${terraform.workspace}"
     custom_origin_config {
       http_port              = 80
       https_port             = 443
